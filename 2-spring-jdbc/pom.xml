@@ -9,18 +9,17 @@
         <artifactId>springboot-training</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>1-spring-core-features</artifactId>
+
+
+    <artifactId>2-spring-jdbc</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>1-spring-core-features</name>
+    <name>2-spring-jdbc</name>
     <url>http://maven.apache.org</url>
 
     <modules>
-        <module>1-1-spring-core</module>
-        <module>1-2-program-to-interface</module>
-        <module>1-3-spring-java-config</module> <!--@Configuration, autowiring -->
-        <module>1-4-spring-bean-scopes</module> <!--lifecyle-->
-        <module>1-5-spring-xml-config</module>
+        <module>2-1-spring-jdbc-api</module>
     </modules>
 
     <properties>
@@ -28,5 +27,4 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 </project>

@@ -6,27 +6,28 @@
 
     <parent>
         <groupId>org.nobleprog</groupId>
-        <artifactId>springboot-training</artifactId>
+        <artifactId>1-spring-core-features</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>1-spring-core-features</artifactId>
-    <packaging>pom</packaging>
 
-    <name>1-spring-core-features</name>
+    <artifactId>1-2-program-to-interface</artifactId>
+    <name>1-2-program-to-interface</name>
+    <version>1.0-SNAPSHOT</version>
+
     <url>http://maven.apache.org</url>
-
-    <modules>
-        <module>1-1-spring-core</module>
-        <module>1-2-program-to-interface</module>
-        <module>1-3-spring-java-config</module> <!--@Configuration, autowiring -->
-        <module>1-4-spring-bean-scopes</module> <!--lifecyle-->
-        <module>1-5-spring-xml-config</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>11</java.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

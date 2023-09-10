@@ -6,21 +6,19 @@
 
     <parent>
         <groupId>org.nobleprog</groupId>
-        <artifactId>springboot-training</artifactId>
+        <artifactId>3-spring-orm</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>1-spring-core-features</artifactId>
+
+    <artifactId>3-2-spring-orm-inheritance</artifactId>
+    <name>3-2-spring-orm-inheritance</name>
+    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>1-spring-core-features</name>
-    <url>http://maven.apache.org</url>
-
     <modules>
-        <module>1-1-spring-core</module>
-        <module>1-2-program-to-interface</module>
-        <module>1-3-spring-java-config</module> <!--@Configuration, autowiring -->
-        <module>1-4-spring-bean-scopes</module> <!--lifecyle-->
-        <module>1-5-spring-xml-config</module>
+        <module>single-table-per-class</module>
+        <module>joined-subclass</module>
+        <module>table-per-concrete-subclass</module>
     </modules>
 
     <properties>
@@ -28,5 +26,4 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 </project>

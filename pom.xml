@@ -26,6 +26,10 @@
 
     <modules>
         <module>1-spring-core-features</module>
+        <module>2-spring-jdbc</module>
+        <module>3-spring-orm</module>
+        <!--<module>4-spring-data-jpa</module>
+        <module>5-springboot-features</module>-->
     </modules>
 
 
