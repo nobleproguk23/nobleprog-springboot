@@ -16,9 +16,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>single-table-per-class</module>
+        <!--<module>single-table-per-class</module>
         <module>joined-subclass</module>
-        <module>table-per-concrete-subclass</module>
+        <module>table-per-concrete-subclass</module>-->
     </modules>
 
     <properties>
