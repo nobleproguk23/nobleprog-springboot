@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Scope;
 public class AppConfig {
 
     @Bean
-    @Scope(scopeName = "prototype")
+    //TODO: Use Scope with name prototype and singleton
     public CustomerService customerService() {
         CustomerService customerService = new CustomerService(customerRepository());
         return customerService;

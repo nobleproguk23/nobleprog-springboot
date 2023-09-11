@@ -8,7 +8,6 @@ public class Application {
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
-        CustomerService bean = applicationContext.getBean(CustomerService.class);
-        System.out.println(bean.getCustomer("1").getFirstName());
+        //TODO: Get Bean from appContext and print customer name
     }
 }

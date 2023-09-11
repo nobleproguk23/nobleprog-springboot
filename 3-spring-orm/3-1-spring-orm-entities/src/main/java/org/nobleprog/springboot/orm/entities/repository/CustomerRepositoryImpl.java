@@ -26,9 +26,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     }
 
     public void createCustomer(Customer customer) {
-        entityManager.getTransaction().begin();
-        entityManager.persist(customer);
-        entityManager.getTransaction().commit();
+        //TODO: Begin transaction using entity manager, persist and Commit transaction
     }
 
 }

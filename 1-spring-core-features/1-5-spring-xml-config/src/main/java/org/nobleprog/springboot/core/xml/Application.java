@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Application {
 
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        //TODO: Create Application Context using xml configuration
         CustomerService bean1 = applicationContext.getBean(CustomerService.class);
         System.out.println(bean1.getCustomer("1").getFirstName());
     }
