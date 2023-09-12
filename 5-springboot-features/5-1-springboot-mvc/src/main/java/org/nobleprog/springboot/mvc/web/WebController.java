@@ -23,12 +23,16 @@ public class WebController {
     @GetMapping("/customers")
     public String getCustomers(Model model) {
         //TODO: get all customers and add to model attribute
+        List<Customer> customers = customerService.getAllCustomers();
+        model.addAttribute("customers", customers);
         return "customers";
     }
 
     @GetMapping("/orders")
     public String getOrders(Model model) {
         //TODO: get all orders and add to model attribute
+        List<Order> orders = orderService.getAllOrders();
+        model.addAttribute("orders", orders);
         return "orders";
     }
 }
