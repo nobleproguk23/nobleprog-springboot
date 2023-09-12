@@ -5,32 +5,34 @@ import org.nobleprog.springboot.data.jpa.mode.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.transaction.Transactional;
-
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class CustomerRepositoryTest {
+class CustomerJpaRepositoryTest {
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private CustomerJpaRepository customerJpaRepository;
 
-    //TODO: Implement tests for CustomerJpaRepository
     @Test
     public void testCustomerById() {
+        //Given
         Customer customer = new Customer();
         customer.setFirstName("John");
         customer.setLastName("JPA");
 
-        customerRepository.createCustomer(customer);
+        customerJpaRepository.save(customer);
 
-        Customer persisted = customerRepository.getCustomerById(1);
+        //When
+        Customer persisted = customerJpaRepository.findById(1).get();
 
         assertEquals(persisted.getFirstName(), customer.getFirstName());
         assertEquals(persisted.getLastName(), customer.getLastName());
     }
+
     @Test
     public void testFindByCustomerFirstNameContains() {
         //Given
@@ -41,17 +43,15 @@ class CustomerRepositoryTest {
         customer1.setFirstName("John");
         customer1.setLastName("JPA");
 
-        customerRepository.createCustomer(customer);
-        customerRepository.createCustomer(customer1);
+        customerJpaRepository.saveAll(Arrays.asList(customer, customer1));
 
 
         //When
-        List<Customer> persisted = customerRepository.getCustomerWithFirstName("oh");
+        List<Customer> persisted = customerJpaRepository.findAllByFirstNameContains("oh");
 
         //Then
         assertTrue(persisted.size() == 2);
         assertEquals(persisted.get(0).getFirstName(), customer.getFirstName());
         assertEquals(persisted.get(1).getFirstName(), customer1.getFirstName());
     }
-
 }

@@ -11,7 +11,6 @@ import java.util.List;
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Integer> {
 
-    //TODO: implement high priority order using query
-    //select o from Order o where o.customer.customerType = 'Premium' and o.totalPrice >= :orderPrice
+    @Query(value = "select * from customer where customer_id ", nativeQuery = true)
     List<Order> getHighPriorityOrders(BigDecimal orderPrice);
 }
