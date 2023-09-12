@@ -5,6 +5,10 @@ import java.util.List;
 
 //TODO: use single table strategy
 
+@Entity
+@Table(name = "ticket")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "ticket_type")
 public abstract class Ticket {
 
     @Id
