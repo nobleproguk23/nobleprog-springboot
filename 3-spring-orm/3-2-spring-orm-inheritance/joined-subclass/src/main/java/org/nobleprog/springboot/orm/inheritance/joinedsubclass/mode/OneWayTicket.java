@@ -5,7 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.time.LocalDate;
 
-
+@Entity
+@Table(name = "one_way_ticket")
 public class OneWayTicket extends Ticket {
 
     private LocalDate departureDate;

@@ -6,6 +6,8 @@ import javax.persistence.Table;
 import java.time.LocalDate;
 
 
+@Entity
+@Table(name = "return_ticket")
 public class ReturnTicket extends Ticket {
 
     private LocalDate arrivalDate;

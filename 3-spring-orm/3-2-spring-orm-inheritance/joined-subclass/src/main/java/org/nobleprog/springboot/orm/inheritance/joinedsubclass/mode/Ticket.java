@@ -3,6 +3,9 @@ package org.nobleprog.springboot.orm.inheritance.joinedsubclass.mode;
 import javax.persistence.*;
 
 //TODO: use joined strategy
+@Entity
+@Table(name = "ticket")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Ticket {
 
     @Id
