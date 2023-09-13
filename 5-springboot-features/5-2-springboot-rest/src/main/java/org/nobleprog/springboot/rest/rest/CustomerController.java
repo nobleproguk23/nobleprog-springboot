@@ -5,6 +5,7 @@ import org.nobleprog.springboot.rest.service.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/customers")
+@Validated
 public class CustomerController {
 
     private final CustomerService customerService;
@@ -23,7 +25,7 @@ public class CustomerController {
     }
 
     @PostMapping
-    public void createCustomer(Customer customer) {
+    public void createCustomer(@Valid Customer customer) {
         //TODO: create customers
         customerService.createCustomer(customer);
     }
@@ -34,8 +36,16 @@ public class CustomerController {
     }
 
     @GetMapping("/customer/{id}")
-    public Customer getCustomer(@PathVariable(value="id")  int id, @RequestParam(value = "firstName", required = false) String firstName) {
-        return customerService.getCustomer(id);
+    public Customer getCustomer(@PathVariable(value="id") @Min(value=1, message = "customer id starts with 1") int id, @RequestParam(value = "firstName", required = false) String firstName) {
+        try {
+            Customer customer = customerService.getCustomer(id);
+            if(customer == null) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer not found ");
+            }
+            return customer; //http://localhost:8080/customers/customer/2
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer not found ");
+        }
     }
 
     @DeleteMapping("/customer/{id}")

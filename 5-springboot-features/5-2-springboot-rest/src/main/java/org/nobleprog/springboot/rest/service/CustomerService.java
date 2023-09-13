@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import javax.transaction.Transactional;
 import java.util.List;
 
+
 @Component
 public class CustomerService {
 
@@ -34,7 +35,7 @@ public class CustomerService {
         return customerRepository.findById(id).get();
     }
 
-    @Transactional()
+    @Transactional
     public void createCustomer(Customer customer) {
       ///  orderRepository.saveAll(customer.getOrders());
         customerRepository.saveAndFlush(customer);

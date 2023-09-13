@@ -19,6 +19,7 @@ public class Order {
     private String item;
 
     @Column
+    @Min(value = 1, message = "Price should be positive")
     private BigDecimal totalPrice;
 
     @ManyToOne
