@@ -10,6 +10,9 @@ import org.springframework.context.annotation.Configuration;
 public class EmailAutoConfiguration {
 
     //TODO: Configure this Bean using Condition of missing its presence
+
+    @Bean
+    @ConditionalOnMissingBean
     public EmailService emailService(EmailProperties emailProperties) {
         return new EmailServiceImpl(emailProperties);
     }
