@@ -1,6 +1,9 @@
 package org.nobleprog.springboot.rest.mode;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import java.math.BigDecimal;
 
 @Entity
@@ -20,6 +23,7 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
+    @JsonIgnore
     private Customer customer;
 
     public BigDecimal getTotalPrice() {

@@ -21,14 +21,15 @@
     <modules>
         <module>5-1-springboot-mvc</module>
         <module>5-2-springboot-rest</module>
+
         <module>5-3-springboot-testing</module>
 
         <module>5-4-autoconfig-emailer</module>
         <module>5-4-autoconfig-user</module>
 
         <module>5-5-springboot-jms</module>
+        <module>5-6-springboot-aop</module>
 
-        <!-- actuator, springboot profiles, -->
     </modules>
 
     <properties>
