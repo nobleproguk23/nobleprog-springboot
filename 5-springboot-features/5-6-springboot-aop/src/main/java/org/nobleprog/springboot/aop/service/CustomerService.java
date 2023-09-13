@@ -10,4 +10,8 @@ public class CustomerService {
     public void createCustomer() {
         System.out.println("Creating customer..");
     }
+
+    public void createCustomer(Long id) {
+        System.out.println("Creating customer.. with id " + id);
+    }
 }
